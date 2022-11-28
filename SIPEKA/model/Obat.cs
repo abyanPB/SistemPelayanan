@@ -1,0 +1,112 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+
+namespace SIPEKA.model
+{
+    using config;
+    internal class Obat
+    {
+        private string _kode_obat;
+        private string _nama_obat;
+        private string _exp_date;
+        private string _jns_obat;
+        private string _stok;
+
+        private ServiceDb dbServer;
+        private DataTable dtTabel;
+        private string Query;
+        public Obat()
+        {
+            _kode_obat = "";
+            _nama_obat = "";
+            _exp_date ="";
+            _jns_obat = "";
+            _stok = "";
+
+            dbServer = new ServiceDb();
+            dtTabel = new DataTable();
+            Query = "";
+        }
+        public string Kode_Obat
+        {
+            set { _kode_obat = value; } 
+        }
+        public string Nama_Obat
+        {
+            set { _nama_obat = value; }
+        }
+        public string Exp_Date
+        {
+            set { _exp_date = value; }
+        }
+        public string Jns_Obat
+        {
+            set { _jns_obat = value; }
+        }
+        public string Stok
+        {
+            set { _stok = value; }
+        }
+
+        public bool apakahAda(string kode)
+        {
+            bool cek = false;
+            Query = "select * from obat where nim='"+kode+"'";
+            dtTabel = dbServer.eksekusiQuery(Query);
+            if(dtTabel.Rows.Count > 0)
+            {
+                cek = true;
+            }
+            return cek;
+        }
+        public void simpan()
+        {
+            Query = "insert into obat values('"+_kode_obat+"','"+_jns_obat+"','"+_nama_obat+"','"+_exp_date+"','"+_stok+"')";
+            if (!(dbServer.eksekusiNonQuery(Query)>0))
+            {
+                throw new Exception("Proses Tambah data gagal");
+            }
+        }
+        public void ubah(string kode)
+        {
+            Query = "update obat set jenis_obat='"+_jns_obat+"',nama_obat='"+_nama_obat+"',ex_date='"+_exp_date+"'," +
+                "stok='"+_stok+"'where kode_obat ='"+kode+"'";
+            if (!(dbServer.eksekusiNonQuery(Query)>0))
+            {
+                throw new Exception("Proses ubah data gagal");
+            }
+        }
+        public void hapus(string kode)
+        {
+            Query = "delete from obat where kode_obat ='"+kode+"'";
+            if (!(dbServer.eksekusiNonQuery(Query)>0))
+            {
+                throw new Exception("Proses hapus data gagal");
+            }
+        }
+        public DataTable tampilSemua()
+        {
+            Query = "select * from obat";
+
+            return dbServer.eksekusiQuery(Query);
+        }
+        public DataTable tampilSemuaGrid()
+        {
+            Query = "select * from obat";
+
+            return dbServer.eksekusiQuery(Query);
+        }
+        public DataTable tampilSemuaGrid(string nama)
+        {
+            Query = "select a.nim,a.nama_mahasiswa,a.tgl_lahir,a.jns_kelamin,a.agama, b.nama_jurusan from mahasiswa a, jurusan b" +
+                " where a.kode_jurusan=b.kode_jurusan and a.nama_mahasiswa like'"+nama+"%'";
+
+            return dbServer.eksekusiQuery(Query);
+        }
+    }
+}
