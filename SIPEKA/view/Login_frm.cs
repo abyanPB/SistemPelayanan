@@ -38,5 +38,10 @@ namespace SIPEKA.view
                 MessageBox.Show("Username atau Password Anda Salah");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
