@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIPEKA.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,12 @@ namespace SIPEKA.view
         {
             Dokter_frm dokter = new Dokter_frm();
             dokter.ShowDialog();
+        }
+
+        private void obat_btn_Click(object sender, EventArgs e)
+        {
+            ObatFrm obat = new ObatFrm();
+            obat.ShowDialog();
         }
     }
 }

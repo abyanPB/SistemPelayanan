@@ -58,7 +58,7 @@
             // 
             // pnlLeft
             // 
-            this.pnlLeft.BackColor = System.Drawing.Color.Green;
+            this.pnlLeft.BackColor = System.Drawing.Color.MediumAquamarine;
             this.pnlLeft.Controls.Add(this.logout_btn);
             this.pnlLeft.Controls.Add(this.aplikasi_btn);
             this.pnlLeft.Controls.Add(this.lainnya_btn);
@@ -209,6 +209,7 @@
             this.obat_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.obat_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.obat_btn.UseVisualStyleBackColor = true;
+            this.obat_btn.Click += new System.EventHandler(this.obat_btn_Click);
             // 
             // pengguna_btn
             // 
@@ -226,7 +227,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.GreenYellow;
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);

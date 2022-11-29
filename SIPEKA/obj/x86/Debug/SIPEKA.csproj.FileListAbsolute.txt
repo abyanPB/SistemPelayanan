@@ -21,3 +21,20 @@ C:\Kuliah\SEMESTER 3\Pa Wahyu (Praktek_PBO 2)\SIPEKA\SIPEKA\obj\x86\Debug\SIPEKA
 C:\Kuliah\SEMESTER 3\Pa Wahyu (Praktek_PBO 2)\SIPEKA\SIPEKA\obj\x86\Debug\SIPEKA.SpalshScreen.resources
 C:\Kuliah\SEMESTER 3\Pa Wahyu (Praktek_PBO 2)\SIPEKA\SIPEKA\obj\x86\Debug\SIPEKA.view.Dokter_frm.resources
 C:\Kuliah\SEMESTER 3\Pa Wahyu (Praktek_PBO 2)\SIPEKA\SIPEKA\obj\x86\Debug\SIPEKA.view.Login_frm.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\bin\Debug\SIPEKA.exe.config
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\bin\Debug\SIPEKA.exe
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\bin\Debug\SIPEKA.pdb
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\bin\Debug\MySql.Data.dll
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.csproj.AssemblyReference.cache
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.csproj.SuggestedBindingRedirects.cache
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.Properties.Resources.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.view.Dokter_frm.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.view.Login_frm.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.model.ObatFrm.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.SpalshScreen.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.view.Home.resources
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.csproj.GenerateResource.cache
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.csproj.CoreCompileInputs.cache
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.csproj.CopyComplete
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.exe
+C:\Users\acerd\source\repos\SistemPelayanan\SIPEKA\obj\x86\Debug\SIPEKA.pdb
