@@ -158,6 +158,7 @@
             this.hapus_txt.TabIndex = 13;
             this.hapus_txt.Text = "Hapus";
             this.hapus_txt.UseVisualStyleBackColor = true;
+            this.hapus_txt.Click += new System.EventHandler(this.hapus_txt_Click);
             // 
             // ubah_txt
             // 
@@ -168,6 +169,7 @@
             this.ubah_txt.TabIndex = 14;
             this.ubah_txt.Text = "Ubah";
             this.ubah_txt.UseVisualStyleBackColor = true;
+            this.ubah_txt.Click += new System.EventHandler(this.ubah_txt_Click);
             // 
             // cetak_txt
             // 
@@ -188,6 +190,7 @@
             this.batal_txt.TabIndex = 17;
             this.batal_txt.Text = "Batal";
             this.batal_txt.UseVisualStyleBackColor = true;
+            this.batal_txt.Click += new System.EventHandler(this.batal_txt_Click);
             // 
             // spesialis_cmb
             // 
@@ -216,9 +219,11 @@
             this.keluar_txt.TabIndex = 20;
             this.keluar_txt.Text = "Keluar";
             this.keluar_txt.UseVisualStyleBackColor = true;
+            this.keluar_txt.Click += new System.EventHandler(this.keluar_txt_Click);
             // 
             // dokter_dgv
             // 
+            this.dokter_dgv.AllowUserToAddRows = false;
             this.dokter_dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dokter_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dokter_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -298,6 +303,7 @@
             this.Controls.Add(this.kode_dokter_txt);
             this.Controls.Add(this.label1);
             this.Name = "Dokter_frm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dokter_frm";
             this.Load += new System.EventHandler(this.Dokter_frm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dokter_dgv)).EndInit();
