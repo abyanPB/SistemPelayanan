@@ -57,6 +57,7 @@ namespace SIPEKA.model
             set { jadwal = value; }
         }
 
+
         public bool cekKode(string kode)
         {
             bool cek = false;
@@ -83,7 +84,7 @@ namespace SIPEKA.model
 
         public void ubahData(string kode)
         {
-            Query = "update dokter set nama_dokter='" + nama_dokter + "' spesialis='" + spesialis + "' no_telepon='" + no_telepon + "' jadwal='" + jadwal + "'" + "where kode_jurusan='" + kode + "'";
+            Query = "update dokter set nama_dokter='" + nama_dokter + "', spesialis='" + spesialis + "', no_telepon='" + no_telepon + "', jadwal='" + jadwal + "'" + " where kode_dokter='" + kode + "'";
 
             if (!(dbServer.eksekusiNonQuery(Query) > 0))
             {
@@ -93,7 +94,7 @@ namespace SIPEKA.model
 
         public void hapusData(string kode)
         {
-            Query = "delete from dokter where kode_jurusan='" + kode + "'";
+            Query = "delete from dokter where kode_dokter='" + kode + "'";
 
             if (!(dbServer.eksekusiNonQuery(Query) > 0))
             {

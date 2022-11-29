@@ -29,7 +29,7 @@ namespace SIPEKA.view
         {
             if (log.cekUserPassword(username_txt.Text, password_txt.Text))
             {
-                Home utama = new Home();
+                Home utama = new Home(username_txt.Text,password_txt.Text);
                 utama.Show();
                 this.Hide();
             }
@@ -37,11 +37,6 @@ namespace SIPEKA.view
             {
                 MessageBox.Show("Username atau Password Anda Salah");
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
