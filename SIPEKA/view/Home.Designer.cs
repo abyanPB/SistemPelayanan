@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nama_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlContent1 = new System.Windows.Forms.Panel();
+            this.pnlmasterdata = new System.Windows.Forms.Panel();
             this.poli_btn = new System.Windows.Forms.Button();
             this.dokter_btn = new System.Windows.Forms.Button();
             this.obat_btn = new System.Windows.Forms.Button();
@@ -48,9 +48,10 @@
             this.pnlControl = new System.Windows.Forms.Panel();
             this.minimize_btn = new System.Windows.Forms.Button();
             this.close_btn = new System.Windows.Forms.Button();
+            this.pnlLainnya = new System.Windows.Forms.Panel();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlContent1.SuspendLayout();
+            this.pnlmasterdata.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlControl.SuspendLayout();
@@ -85,6 +86,7 @@
             this.logout_btn.Text = "Log Out";
             this.logout_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.logout_btn.UseVisualStyleBackColor = false;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // aplikasi_btn
             // 
@@ -113,6 +115,7 @@
             this.lainnya_btn.Text = "Lainnya";
             this.lainnya_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.lainnya_btn.UseVisualStyleBackColor = false;
+            this.lainnya_btn.Click += new System.EventHandler(this.lainnya_btn_Click);
             // 
             // master_data_btn
             // 
@@ -127,6 +130,7 @@
             this.master_data_btn.Text = "MASTER DATA";
             this.master_data_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.master_data_btn.UseVisualStyleBackColor = false;
+            this.master_data_btn.Click += new System.EventHandler(this.master_data_btn_Click);
             // 
             // label2
             // 
@@ -144,8 +148,9 @@
             this.nama_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nama_lbl.Location = new System.Drawing.Point(12, 163);
             this.nama_lbl.Name = "nama_lbl";
-            this.nama_lbl.Size = new System.Drawing.Size(297, 51);
+            this.nama_lbl.Size = new System.Drawing.Size(295, 41);
             this.nama_lbl.TabIndex = 2;
+            this.nama_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -157,19 +162,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pnlContent1
+            // pnlmasterdata
             // 
-            this.pnlContent1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlContent1.Controls.Add(this.poli_btn);
-            this.pnlContent1.Controls.Add(this.dokter_btn);
-            this.pnlContent1.Controls.Add(this.obat_btn);
-            this.pnlContent1.Controls.Add(this.pengguna_btn);
-            this.pnlContent1.Controls.Add(this.panel1);
-            this.pnlContent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent1.Location = new System.Drawing.Point(322, 0);
-            this.pnlContent1.Name = "pnlContent1";
-            this.pnlContent1.Size = new System.Drawing.Size(1598, 1080);
-            this.pnlContent1.TabIndex = 3;
+            this.pnlmasterdata.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlmasterdata.Controls.Add(this.poli_btn);
+            this.pnlmasterdata.Controls.Add(this.dokter_btn);
+            this.pnlmasterdata.Controls.Add(this.obat_btn);
+            this.pnlmasterdata.Controls.Add(this.pengguna_btn);
+            this.pnlmasterdata.Controls.Add(this.panel1);
+            this.pnlmasterdata.Controls.Add(this.pnlLainnya);
+            this.pnlmasterdata.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlmasterdata.Location = new System.Drawing.Point(322, 0);
+            this.pnlmasterdata.Name = "pnlmasterdata";
+            this.pnlmasterdata.Size = new System.Drawing.Size(1598, 1080);
+            this.pnlmasterdata.TabIndex = 3;
             // 
             // poli_btn
             // 
@@ -292,6 +298,14 @@
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
+            // pnlLainnya
+            // 
+            this.pnlLainnya.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLainnya.Location = new System.Drawing.Point(0, 0);
+            this.pnlLainnya.Name = "pnlLainnya";
+            this.pnlLainnya.Size = new System.Drawing.Size(1598, 1080);
+            this.pnlLainnya.TabIndex = 5;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,7 +314,7 @@
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.ControlBox = false;
             this.Controls.Add(this.pnlTop);
-            this.Controls.Add(this.pnlContent1);
+            this.Controls.Add(this.pnlmasterdata);
             this.Controls.Add(this.pnlLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -310,8 +324,8 @@
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlContent1.ResumeLayout(false);
-            this.pnlContent1.PerformLayout();
+            this.pnlmasterdata.ResumeLayout(false);
+            this.pnlmasterdata.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlTop.ResumeLayout(false);
@@ -322,7 +336,7 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlLeft;
-        private System.Windows.Forms.Panel pnlContent1;
+        private System.Windows.Forms.Panel pnlmasterdata;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlControl;
         private System.Windows.Forms.Button minimize_btn;
@@ -340,5 +354,6 @@
         private System.Windows.Forms.Button dokter_btn;
         private System.Windows.Forms.Button obat_btn;
         private System.Windows.Forms.Button pengguna_btn;
+        private System.Windows.Forms.Panel pnlLainnya;
     }
 }

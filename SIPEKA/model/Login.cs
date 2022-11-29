@@ -52,5 +52,23 @@
                 }
                 return cek;
             }
+        public string tampilNamaByKode(string user, string pass)
+        {
+            string nama = "";
+
+            Query = "select nama_user from user where username='" + user + "' and password='" + pass + "'";
+
+            dtTable = dbServer.eksekusiQuery(Query);
+            if (dtTable.Rows.Count > 0)
+            {
+                foreach (DataRow data in dtTable.Rows)
+                {
+                    nama = data[0].ToString();
+                }
+            }
+            return nama;
         }
+
+
+    }
     }
