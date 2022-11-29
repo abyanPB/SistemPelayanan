@@ -54,6 +54,7 @@
     <Compile Include="config\ServiceDb.cs" />
     <Compile Include="model\Dokter.cs" />
     <Compile Include="model\Login.cs" />
+    <Compile Include="model\Obat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\Dokter_frm.cs">
@@ -61,6 +62,12 @@
     </Compile>
     <Compile Include="view\Dokter_frm.Designer.cs">
       <DependentUpon>Dokter_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ObatFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ObatFrm.designer.cs">
+      <DependentUpon>ObatFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="view\SpalshScreen.cs">
       <SubType>Form</SubType>
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Login_frm.resx">
       <DependentUpon>Login_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ObatFrm.resx">
+      <DependentUpon>ObatFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\SpalshScreen.resx">
       <DependentUpon>SpalshScreen.cs</DependentUpon>
