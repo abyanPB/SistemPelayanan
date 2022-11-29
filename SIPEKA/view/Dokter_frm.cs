@@ -23,6 +23,7 @@ namespace SIPEKA.view
         void tampilGrid()
         {
             dokter_dgv.DataSource = dokter.tampilkanSemua();
+            belangBelang(dokter_dgv);
         }
 
         void isiAgama()
@@ -65,6 +66,84 @@ namespace SIPEKA.view
             tampilGrid();
             isiAgama();
             isiJadwal();
+            bersihkan();
+        }
+
+        void bersihkan()
+        {
+            kode_dokter_txt.Clear();
+            nama_dokter_txt.Clear();
+            spesialis_cmb.Text = "";
+            telepon_txt.Clear();
+            jadwal_cmb.Text = "";
+        }
+
+        void belangBelang(DataGridView dgv)
+        {
+            foreach (DataGridViewRow baris in dgv.Rows)
+            {
+                foreach (DataGridViewCell kolom in baris.Cells)
+                {
+                    if (baris.Index % 2 == 0)
+                    {
+                        kolom.Style.BackColor = Color.LightGray;
+                    }
+                    else
+                    {
+                        kolom.Style.BackColor = Color.WhiteSmoke;
+                    }
+                }
+            }
+        }
+
+        private void ubah_txt_Click(object sender, EventArgs e)
+        {
+            if (dokter.cekKode(kode_dokter_txt.Text))
+            {
+                if (MessageBox.Show("Yakin akan diubah ?", "Ubah Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dokter.Kode_Dokter = kode_dokter_txt.Text;
+                    dokter.Nama_Dokter = nama_dokter_txt.Text;
+                    dokter.Spesialis = spesialis_cmb.Text;
+                    dokter.No_Telepon = telepon_txt.Text;
+                    dokter.Jadwal = jadwal_cmb.Text;
+
+                    dokter.ubahData(kode_dokter_txt.Text);
+
+
+                    MessageBox.Show("Ubah Data Berhasil.", "Ubah Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bersihkan();
+                    tampilGrid();
+                    kode_dokter_txt.Focus();
+                }
+            }
+        }
+
+        private void hapus_txt_Click(object sender, EventArgs e)
+        {
+            if (dokter.cekKode(kode_dokter_txt.Text))
+            {
+                if (MessageBox.Show("Yakin akan dihapus ?", "Ubah Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dokter.hapusData(kode_dokter_txt.Text);
+
+                    MessageBox.Show("Hapus Data Berhasil.", "Hapus Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bersihkan();
+                    tampilGrid();
+                    kode_dokter_txt.Focus();
+                }
+            }
+        }
+
+        private void keluar_txt_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void batal_txt_Click(object sender, EventArgs e)
+        {
+            bersihkan();
+            kode_dokter_txt.Focus();
         }
     }
 }
