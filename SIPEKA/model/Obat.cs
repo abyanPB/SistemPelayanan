@@ -56,13 +56,36 @@ namespace SIPEKA.model
         public bool apakahAda(string kode)
         {
             bool cek = false;
-            Query = "select * from obat where nim='"+kode+"'";
+            Query = "select * from obat where kode_obat='"+kode+"'";
             dtTabel = dbServer.eksekusiQuery(Query);
             if(dtTabel.Rows.Count > 0)
             {
                 cek = true;
             }
             return cek;
+        }
+        public string buatKode()
+        {
+            string kode = "";
+            int indek = 0;
+            Query = "select ifnull(max(right(kode_obat,2)),0)+1 as kode from obat";
+            dtTabel = dbServer.eksekusiQuery(Query);
+            if (dtTabel.Rows.Count>0)
+            {
+                foreach (DataRow data in dtTabel.Rows)
+                {
+                    indek = Convert.ToInt32(data[0]);
+                }
+                if (indek>0 && indek<10)
+                {
+                    kode ="M0" + indek.ToString();
+                }
+                else if (indek>=10 && indek<100)
+                {
+                    kode = indek.ToString();
+                }
+            }
+            return kode;
         }
         public void simpan()
         {

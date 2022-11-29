@@ -37,26 +37,26 @@
             this.cmb_jnsobat = new System.Windows.Forms.ComboBox();
             this.date_expired = new System.Windows.Forms.DateTimePicker();
             this.dgv_obat = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JenisObat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamaObat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpiredDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simpan_btn = new System.Windows.Forms.Button();
             this.ubah_btn = new System.Windows.Forms.Button();
             this.hapus_btn = new System.Windows.Forms.Button();
             this.batal_btn = new System.Windows.Forms.Button();
             this.btn_cetak = new System.Windows.Forms.Button();
             this.btn_keluar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JenisObat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamaObat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExpiredDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_obat)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,9 +87,11 @@
             // 
             // txt_kodeobat
             // 
+            this.txt_kodeobat.Enabled = false;
             this.txt_kodeobat.Location = new System.Drawing.Point(12, 204);
             this.txt_kodeobat.Multiline = true;
             this.txt_kodeobat.Name = "txt_kodeobat";
+            this.txt_kodeobat.ReadOnly = true;
             this.txt_kodeobat.Size = new System.Drawing.Size(164, 30);
             this.txt_kodeobat.TabIndex = 20;
             // 
@@ -111,6 +113,7 @@
             // 
             // cmb_jnsobat
             // 
+            this.cmb_jnsobat.Cursor = System.Windows.Forms.Cursors.Default;
             this.cmb_jnsobat.FormattingEnabled = true;
             this.cmb_jnsobat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmb_jnsobat.ItemHeight = 16;
@@ -130,6 +133,8 @@
             // 
             // dgv_obat
             // 
+            this.dgv_obat.AllowUserToAddRows = false;
+            this.dgv_obat.AllowUserToDeleteRows = false;
             this.dgv_obat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_obat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.kode,
@@ -139,36 +144,62 @@
             this.Stok});
             this.dgv_obat.Location = new System.Drawing.Point(223, 222);
             this.dgv_obat.Name = "dgv_obat";
-            this.dgv_obat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgv_obat.ReadOnly = true;
             this.dgv_obat.RowHeadersWidth = 51;
             this.dgv_obat.RowTemplate.Height = 24;
             this.dgv_obat.Size = new System.Drawing.Size(802, 417);
             this.dgv_obat.TabIndex = 27;
+            this.dgv_obat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_obat_CellClick);
             // 
-            // groupBox1
+            // kode
             // 
-            this.groupBox1.Location = new System.Drawing.Point(223, 167);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 49);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cari";
+            this.kode.DataPropertyName = "kode_obat";
+            this.kode.HeaderText = "Kode Obat";
+            this.kode.MinimumWidth = 6;
+            this.kode.Name = "kode";
+            this.kode.Width = 125;
             // 
-            // txt_search
+            // JenisObat
             // 
-            this.txt_search.Location = new System.Drawing.Point(229, 188);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(315, 22);
-            this.txt_search.TabIndex = 14;
+            this.JenisObat.DataPropertyName = "jenis_obat";
+            this.JenisObat.HeaderText = "Jenis Obat";
+            this.JenisObat.MinimumWidth = 6;
+            this.JenisObat.Name = "JenisObat";
+            this.JenisObat.Width = 120;
             // 
-            // button1
+            // NamaObat
             // 
-            this.button1.Location = new System.Drawing.Point(223, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 32);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Simpan";
-            this.button1.UseVisualStyleBackColor = true;
+            this.NamaObat.DataPropertyName = "nama_obat";
+            this.NamaObat.HeaderText = "Nama Obat";
+            this.NamaObat.MinimumWidth = 6;
+            this.NamaObat.Name = "NamaObat";
+            this.NamaObat.Width = 150;
+            // 
+            // ExpiredDate
+            // 
+            this.ExpiredDate.DataPropertyName = "ex_date";
+            this.ExpiredDate.HeaderText = "Expired Date";
+            this.ExpiredDate.MinimumWidth = 6;
+            this.ExpiredDate.Name = "ExpiredDate";
+            this.ExpiredDate.Width = 120;
+            // 
+            // Stok
+            // 
+            this.Stok.DataPropertyName = "stok";
+            this.Stok.HeaderText = "Stok";
+            this.Stok.MinimumWidth = 6;
+            this.Stok.Name = "Stok";
+            this.Stok.Width = 125;
+            // 
+            // simpan_btn
+            // 
+            this.simpan_btn.Location = new System.Drawing.Point(223, 129);
+            this.simpan_btn.Name = "simpan_btn";
+            this.simpan_btn.Size = new System.Drawing.Size(88, 32);
+            this.simpan_btn.TabIndex = 29;
+            this.simpan_btn.Text = "Simpan";
+            this.simpan_btn.UseVisualStyleBackColor = true;
+            this.simpan_btn.Click += new System.EventHandler(this.simpan_btn_Click);
             // 
             // ubah_btn
             // 
@@ -178,6 +209,7 @@
             this.ubah_btn.TabIndex = 30;
             this.ubah_btn.Text = "Ubah";
             this.ubah_btn.UseVisualStyleBackColor = true;
+            this.ubah_btn.Click += new System.EventHandler(this.ubah_btn_Click);
             // 
             // hapus_btn
             // 
@@ -187,6 +219,7 @@
             this.hapus_btn.TabIndex = 31;
             this.hapus_btn.Text = "Hapus";
             this.hapus_btn.UseVisualStyleBackColor = true;
+            this.hapus_btn.Click += new System.EventHandler(this.hapus_btn_Click);
             // 
             // batal_btn
             // 
@@ -196,6 +229,7 @@
             this.batal_btn.TabIndex = 32;
             this.batal_btn.Text = "Batal";
             this.batal_btn.UseVisualStyleBackColor = true;
+            this.batal_btn.Click += new System.EventHandler(this.batal_btn_Click);
             // 
             // btn_cetak
             // 
@@ -214,6 +248,7 @@
             this.btn_keluar.TabIndex = 34;
             this.btn_keluar.Text = "Keluar";
             this.btn_keluar.UseVisualStyleBackColor = true;
+            this.btn_keluar.Click += new System.EventHandler(this.btn_keluar_Click);
             // 
             // panel2
             // 
@@ -234,6 +269,39 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 651);
             this.panel2.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(7, 500);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 25);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Stok";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(7, 416);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 25);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Date Expired";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(7, 328);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 25);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Nama Obat";
             // 
             // label7
             // 
@@ -266,78 +334,21 @@
             this.panel1.Size = new System.Drawing.Size(837, 100);
             this.panel1.TabIndex = 38;
             // 
-            // label3
+            // txt_search
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(7, 328);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Nama Obat";
+            this.txt_search.Location = new System.Drawing.Point(229, 188);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(315, 22);
+            this.txt_search.TabIndex = 29;
             // 
-            // label8
+            // groupBox1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(7, 416);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 25);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Date Expired";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(7, 500);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 25);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Date Expired";
-            // 
-            // kode
-            // 
-            this.kode.DataPropertyName = "kode_obat";
-            this.kode.HeaderText = "Kode Obat";
-            this.kode.MinimumWidth = 6;
-            this.kode.Name = "kode";
-            this.kode.Width = 125;
-            // 
-            // JenisObat
-            // 
-            this.JenisObat.DataPropertyName = "jenis_obat";
-            this.JenisObat.HeaderText = "Jenis Obat";
-            this.JenisObat.MinimumWidth = 6;
-            this.JenisObat.Name = "JenisObat";
-            this.JenisObat.Width = 150;
-            // 
-            // NamaObat
-            // 
-            this.NamaObat.DataPropertyName = "nama_obat";
-            this.NamaObat.HeaderText = "Nama Obat";
-            this.NamaObat.MinimumWidth = 6;
-            this.NamaObat.Name = "NamaObat";
-            this.NamaObat.Width = 200;
-            // 
-            // ExpiredDate
-            // 
-            this.ExpiredDate.DataPropertyName = "ex_date";
-            this.ExpiredDate.HeaderText = "Expired Date";
-            this.ExpiredDate.MinimumWidth = 6;
-            this.ExpiredDate.Name = "ExpiredDate";
-            this.ExpiredDate.Width = 150;
-            // 
-            // Stok
-            // 
-            this.Stok.DataPropertyName = "stok";
-            this.Stok.HeaderText = "Stok";
-            this.Stok.MinimumWidth = 6;
-            this.Stok.Name = "Stok";
-            this.Stok.Width = 125;
+            this.groupBox1.Location = new System.Drawing.Point(223, 167);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(327, 49);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cari";
             // 
             // ObatFrm
             // 
@@ -346,14 +357,14 @@
             this.ClientSize = new System.Drawing.Size(1037, 651);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_keluar);
             this.Controls.Add(this.btn_cetak);
             this.Controls.Add(this.batal_btn);
             this.Controls.Add(this.hapus_btn);
             this.Controls.Add(this.ubah_btn);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.simpan_btn);
             this.Controls.Add(this.dgv_obat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ObatFrm";
@@ -380,10 +391,7 @@
         private System.Windows.Forms.TextBox txt_stok;
         private System.Windows.Forms.ComboBox cmb_jnsobat;
         private System.Windows.Forms.DateTimePicker date_expired;
-        private System.Windows.Forms.DataGridView dgv_obat;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button simpan_btn;
         private System.Windows.Forms.Button ubah_btn;
         private System.Windows.Forms.Button hapus_btn;
         private System.Windows.Forms.Button batal_btn;
@@ -396,10 +404,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn kode;
         private System.Windows.Forms.DataGridViewTextBoxColumn JenisObat;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamaObat;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpiredDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stok;
+        private System.Windows.Forms.DataGridView dgv_obat;
     }
 }
